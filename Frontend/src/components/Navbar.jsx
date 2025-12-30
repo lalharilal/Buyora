@@ -1,12 +1,13 @@
 import React from "react";
-
-/* Simple SVG icons kept inline to avoid extra dependencies */
+import logo from "../assets/logo.png";
 const Logo = () => (
   <div className="flex items-center gap-2 font-semibold text-indigo-600">
-    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" aria-hidden>
-      <rect x="3" y="3" width="18" height="18" rx="5" fill="#6366F1"></rect>
-    </svg>
-    <span className="hidden sm:inline">Shoply</span>
+    <img
+      src={logo}
+      alt="Buyora Logo"
+      className="w-11 h-11 object-contain"
+    />
+    <span className="hidden sm:inline">Buyora</span>
   </div>
 );
 
