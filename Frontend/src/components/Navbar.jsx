@@ -7,7 +7,7 @@ const Logo = () => (
       alt="Buyora Logo"
       className="w-11 h-11 object-contain"
     />
-    <span className="hidden sm:inline">Buyora</span>
+   <span className="hidden sm:inline text-green-600">Buyora</span>
   </div>
 );
 
