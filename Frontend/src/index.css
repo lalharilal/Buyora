@@ -6,3 +6,42 @@
 html, body, #root {
   height: 100%;
 }
+
+/* Custom search styles from design */
+.search-wrap{position:relative;max-width:920px;width:100%}
+.search-input{width:100%;padding:12px 48px 12px 16px;border-radius:999px;border:1px solid rgba(15,23,36,0.06);background:#fff;font-size:15px;transition:box-shadow .18s ease, transform .12s ease}
+.search-input:focus{outline:none;box-shadow:0 14px 40px rgba(15,23,36,0.08);transform:translateY(-1px)}
+.search-camera{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:linear-gradient(90deg,var(--accent-1),var(--accent-2));border:0;padding:8px;border-radius:10px;color:#fff;cursor:pointer}
+
+:root{
+  --accent-1:#7c3aed; /* indigo-600-ish */
+  --accent-2:#a78bfa; /* indigo-400-ish */
+}
+
+/* Gradient add button used in Today's Deals */
+.btn-gradient{background:linear-gradient(90deg,#7c3aed 0%,#5eead4 100%);box-shadow:0 10px 30px rgba(124,58,237,0.12);transition:transform .14s ease, box-shadow .14s ease}
+.btn-gradient:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(124,58,237,0.14)}
+
+/* Animated gradient for banners */
+.animated-gradient{
+  background: linear-gradient(90deg, #7c3aed 0%, #a78bfa 50%, #60a5fa 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* Gentle floating animation for decorative elements */
+.floaty{animation:floaty 6s ease-in-out infinite}
+@keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
+
+/* CTA hover micro-interaction */
+.cta-tilt{transition:transform .18s ease, box-shadow .18s ease}
+.cta-tilt:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 10px 24px rgba(15,23,36,0.18)}
+
+/* subtle glass shimmer for banner overlay */
+.banner-shimmer:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(255,255,255,0.06) 0%,rgba(255,255,255,0.02) 50%,rgba(255,255,255,0.06) 100%);mix-blend-mode:overlay;pointer-events:none}

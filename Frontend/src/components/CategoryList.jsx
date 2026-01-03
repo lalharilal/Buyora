@@ -70,7 +70,7 @@ export default function CategoryList({ categories = [] }) {
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
+    <section className="max-w-7xl mx-auto px-2 sm:px-4 py-6">
 
       <div className="relative">
         {/* Left control */}
