@@ -1,12 +1,13 @@
 import React from "react";
-
-/* Simple SVG icons kept inline to avoid extra dependencies */
+import logo from "../assets/logo.png";
 const Logo = () => (
   <div className="flex items-center gap-2 font-semibold text-indigo-600">
-    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" aria-hidden>
-      <rect x="3" y="3" width="18" height="18" rx="5" fill="#6366F1"></rect>
-    </svg>
-    <span className="hidden sm:inline">Shoply</span>
+    <img
+      src={logo}
+      alt="Buyora Logo"
+      className="w-11 h-11 object-contain"
+    />
+   <span className="hidden sm:inline text-green-600">Buyora</span>
   </div>
 );
 
@@ -49,7 +50,7 @@ const ProfileIcon = () => (
 export default function Navbar() {
   return (
     <header className="bg-white border-b border-gray-100 sticky top-0 z-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4">
         <nav className="flex items-center gap-4 h-16">
           {/* Left: Logo + Delivery */}
           <div className="flex items-center gap-4">
@@ -65,31 +66,28 @@ export default function Navbar() {
 
           {/* Center: Search (flex-1 ensures it stays centered) */}
           <div className="flex-1">
-            <div className="mx-auto max-w-xl">
-              <label htmlFor="search" className="sr-only">Search</label>
-              <div className="relative">
-                {/* Camera button for image search (decorative for now; accessible label provided) */}
-                <button
-                  type="button"
-                  aria-label="Search by image"
-                  className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 p-1 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-200"
-                >
-                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" aria-hidden>
-                    <path d="M4 7h3l2-2h6l2 2h3v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M10 11a2 2 0 1 0 4 0 2 2 0 0 0-4 0z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </button>
-
+            <div className="mx-auto">
+              <div className="search-wrap">
+                <label htmlFor="search" className="sr-only">Search</label>
                 <input
                   id="search"
                   type="search"
                   placeholder="Search for products, brands, or styles"
-                  className="w-full border border-gray-200 bg-gray-50 text-sm rounded-full py-2 pl-10 pr-10 focus:outline-none focus:ring-2 focus:ring-indigo-200"
+                  className="search-input text-sm pl-4 pr-12"
                   aria-label="Search products, brands, or styles"
                 />
-                <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none">
-                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none"><path d="M21 21l-4.35-4.35" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><circle cx="11" cy="11" r="6" stroke="currentColor" strokeWidth="1.5"/></svg>
-                </div>
+
+                {/* Camera icon inside input (right side) for visual search */}
+                <button
+                  type="button"
+                  aria-label="Visual search by camera"
+                  className="search-camera"
+                >
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" aria-hidden>
+                    <path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10z" fill="rgba(255,255,255,0.9)" />
+                    <path d="M4 7h3l2-2h6l2 2h3v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7z" stroke="rgba(255,255,255,0.9)" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </button>
               </div>
             </div>
           </div>

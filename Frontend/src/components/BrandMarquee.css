@@ -1,0 +1,18 @@
+.brand-marquee-section{padding:14px 0}
+.brand-marquee{overflow:hidden}
+.brand-track{display:flex;gap:18px;align-items:center;animation:marquee-rtl 18s linear infinite}
+.brand-card{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px 18px;background:#a1e5e0;border-radius:12px;box-shadow:0 8px 20px rgba(15,23,42,0.06);min-width:140px}
+.brand-icon{font-size:26px;margin-bottom:6px}
+.brand-title{font-size:13px;color:#374151;font-weight:600}
+
+.brand-marquee:hover .brand-track{animation-play-state:paused}
+
+@keyframes marquee-rtl{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+
+@media (min-width:1024px){
+  .brand-card{min-width:160px;padding:14px 20px}
+  .brand-track{gap:24px}
+}

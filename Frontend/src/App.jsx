@@ -1,6 +1,11 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import CategoryList from "./components/CategoryList";
+import Banner from "./components/Banner";
+import BrandMarquee from "./components/BrandMarquee";
+import TodayDeals from "./components/TodayDeals";
+import AdditionalBanner from "./components/AdditionalBanner";
+import Footer from "./components/Footer";
 
 /* Sample category data stored in an array (dynamic & easy to extend) */
 const categories = [
@@ -44,6 +49,20 @@ export default function App() {
       
 
       <CategoryList categories={categories} />
+
+      <Banner categories={categories} />
+
+      {/* Brand marquee placed immediately below the banner */}
+      <BrandMarquee />
+
+      {/* Today's Deals section below the marquee */}
+      <TodayDeals />
+
+      {/* Additional banner below Today's Deals as requested */}
+      <AdditionalBanner />
+      
+      {/* Site footer */}
+      <Footer />
     </div>
   );
 }
